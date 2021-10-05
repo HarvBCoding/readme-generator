@@ -17,4 +17,8 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = readMeData => {
+
+  console.log(readMeData);
+  
+};
