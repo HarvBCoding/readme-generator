@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 
 const fs = require('fs');
 
-// const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const userQuestions = () => {
@@ -142,15 +142,35 @@ const userQuestions = () => {
         return readMeData;
     })
 }
-userQuestions()
-    .then(readMeData => {
-        console.log(readMeData);
-    })
+
+// mock data
+const mockData = {
+    title: 'run-buddy',
+    description:'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et. Nam fringilla elit dapibus pellentesque cursus.',
+    installInstructions: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque.',
+    useInstructions: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum.',
+    contributionConfirm: true,
+    contribution: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque.',
+    confirmTests: true,
+    github: 'lernantino',
+    email: 'someone@somewhere.com',
+    license: []
+};
+
+generateMarkdown(mockData);
+// userQuestions()
+    // .then(readMeData => {
+        // console.log(readMeData);
+        // generateMarkdown(readMeData);
+
+    // })
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-    // return fs.writeFileSync('./README.txt', data)
-// }
+function writeToFile(fileName, data) {
+    return fs.writeFileSync('./README.txt', data)
+};
+
+writeToFile('README.text', mockData);
 
 // TODO: Create a function to initialize app
 // function init() {}
