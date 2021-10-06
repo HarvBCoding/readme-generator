@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 
 const fs = require('fs');
 
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const {generateMarkdown} = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const userQuestions = () => {
@@ -133,10 +133,10 @@ const userQuestions = () => {
             }
         },
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'license',
             message: 'What type of open source licensing do you have?',
-            choices: ['No license', 'A MIT license', 'The GNU GPLv3']
+            choices: ['None', 'MIT', 'MIT/Apache-2.0', 'GPL']
         }
     ]).then(readMeData => {
         return readMeData;
@@ -152,25 +152,25 @@ const mockData = {
     contributionConfirm: true,
     contribution: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque.',
     confirmTests: true,
+    tests: 'examples possibly screenshots of code examples',
     github: 'lernantino',
     email: 'someone@somewhere.com',
-    license: []
+    license: 'GPL'
 };
 
-generateMarkdown(mockData);
 // userQuestions()
     // .then(readMeData => {
         // console.log(readMeData);
-        // generateMarkdown(readMeData);
+        // return generateMarkdown(readMeData);
 
     // })
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFileSync('./README.txt', data)
+    return fs.writeFileSync(fileName, data)
 };
 
-writeToFile('README.text', mockData);
+writeToFile('README.md', generateMarkdown(mockData));
 
 // TODO: Create a function to initialize app
 // function init() {}
