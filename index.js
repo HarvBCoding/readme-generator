@@ -155,7 +155,7 @@ const mockData = {
     tests: 'examples possibly screenshots of code examples',
     github: 'lernantino',
     email: 'someone@somewhere.com',
-    license: 'GPL'
+    license: 'MIT/Apache-2.0'
 };
 
 // userQuestions()
@@ -170,10 +170,19 @@ function writeToFile(fileName, data) {
     return fs.writeFileSync(fileName, data)
 };
 
-writeToFile('README.md', generateMarkdown(mockData));
-
 // TODO: Create a function to initialize app
-// function init() {}
+function init() {
+
+    // userQuestions()
+    //     .then( readMeData => {
+        
+    //         writeToFile('README.md', generateMarkdown(readMeData));
+
+    //     })
+
+    writeToFile('README.md', generateMarkdown(mockData));
+    
+}
 
 // Function call to initialize app
-// init();
+init();
