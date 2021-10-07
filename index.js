@@ -25,7 +25,7 @@ const userQuestions = () => {
         {
             // description section
             type: 'input',
-            name: 'decription',
+            name: 'description',
             message: 'Provide a description of the project. (Required)',
             validate: descriptionInput => {
                 if (descriptionInput) {
@@ -158,12 +158,6 @@ const mockData = {
     license: 'MIT/Apache-2.0'
 };
 
-// userQuestions()
-    // .then(readMeData => {
-        // console.log(readMeData);
-        // return generateMarkdown(readMeData);
-
-    // })
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -173,14 +167,12 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
 
-    // userQuestions()
-    //     .then( readMeData => {
+    userQuestions()
+        .then( readMeData => {
         
-    //         writeToFile('README.md', generateMarkdown(readMeData));
+            writeToFile('README.md', generateMarkdown(readMeData));
 
-    //     })
-
-    writeToFile('README.md', generateMarkdown(mockData));
+        })
     
 }
 

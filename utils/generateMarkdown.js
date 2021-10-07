@@ -57,39 +57,72 @@ function contributingLink(confirm) {
 };
 
 // function to create the tests section
+function testsSection(confirm, answer) {
+  if (!confirm) {
+    return ''
+  } else {
+    return `
+  ## Tests
+  Code Examples recommended for testing: ${answer}`
+  }
+}
 
 // function to create the tests table of contents link
+function testsLink(confirm) {
+  if (!confirm) {
+    return ''
+  } else {
+    return `* [Tests](#tests)`
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  // console.log(mockData);
+  
+  const { title, 
+    description, 
+    installInstructions, 
+    useInstructions, 
+    contributionConfirm, 
+    contribution, 
+    confirmTests, 
+    tests, 
+    github, 
+    email, 
+    license} = data;
 
   return `
-  # ${data.title}
-  ${renderLicenseBadge(data.license)}
+  # ${title}
+  ${renderLicenseBadge(license)}
 
   ## Description
-  ${data.description}
+  ${description}
 
   ## Table of Contents
   * [Installation](#installation-instructions)
   * [Usage](#usage)
-  ${renderLicenseLink(data.license)}
-  ${contributingLink(data.contributionConfirm)}
+  ${contributingLink(contributionConfirm)}
+  ${testsLink(confirmTests)}
+  * [Questions](#questions)
+  ${renderLicenseLink(license)}
+  
+  
 
   ## Installation Instructions
-  ${data.installInstructions}
+  ${installInstructions}
 
   ## Usage
-  ${data.useInstructions}
+  ${useInstructions}
 
-  ${contributingSection(data.contributionConfirm, data.contribution)}
+  ${contributingSection(contributionConfirm, contribution)}
+
+  ${testsSection(confirmTests, tests)}
 
   ## Questions
-  If you have any questions or need to report bugs please reach out to me at [${data.github}](https://www.github.com/${data.github}) or ${data.email}
+  If you have any questions or need to report bugs please reach out to me at [${github}](https://www.github.com/${github}) or ${email}
   
   
-${renderLicenseSection(data.license)}
+${renderLicenseSection(license)}
 `;
 }
 
