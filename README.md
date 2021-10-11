@@ -1,35 +1,35 @@
 
   # Run Buddy
-  ![license badge](https://img.shields.io/badge/license-MIT-green.svg)
+  
 
   ## Description
-  A website to introduce users to running. The user will enter their information and a trainer will be selected for them based on the information provided. Users will then be contacted by the trainer who will get a feel of what users goals are and prepare a fitness and diet plan to help the user reach their goal.
+  A running website that partners users with trainers based on user need and the trainer will reach out to the user within 24 hours to ask about long and short term body goals. The trainer will then complete a fitness and diet plan optimal for the user.
 
   ## Table of Contents
   * [Installation](#installation-instructions)
   * [Usage](#usage)
-  * [License](#license)
   * [Contributing](#contributing)
+  
+  * [Questions](#questions)
+  
+  
   
 
   ## Installation Instructions
-  1. Navigate to the website 2. Browse the website to get a feel of what it's about 3. If you want to give us a try enter tyour information, a trainer will contact you within 24 hours.
+  Navigate to github.com/harvbcoding/run-buddy
 
   ## Usage
-  Stay in contact with your trainer. They are there to encourage and guide you to be the person you always wanted to be.
+  Enter user information in the form and wait to be contacted by your trainer.
 
   
   ## Contributing
-  If you would like to contribute to my project or have ideas for improvements please reach out to me via the github or email listed in the questions section.
+  If you would like to contribute to my project or have ideas for improvements please Please send all contributions to the email in the question section. Please include your name, what your code does and how you believe it will improve user interface. Along with the github repo where the code is located. Contributions without a github repo will not be considered. Thank you so much for the support.
   
 
   
 
   ## Questions
-  If you have any questions or need to report bugs please reach out to me at [harvbcoding](https://www.github.com/harvbcoding) or harvey.breania@gmail.com
+  If you have any questions or need to report bugs please reach out to me at [harvbcoding](https://www.github.com/harvbcoding) or someone@somewhere.com
   
   
 
-  ## License
-  This project is licensed under the MIT License.
-  
